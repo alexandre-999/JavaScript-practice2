@@ -15,7 +15,6 @@ output.addEventListener('click', () => {
     fizznum > 0 &&
     buzznum > 0
     ) {
-      let val = ''
       for(i = 1; i < 100; i++) {
         if(i % fizznum === 0 && i % buzznum === 0) {
           val = `FizzBuzz ${i}`;
@@ -28,7 +27,7 @@ output.addEventListener('click', () => {
         }
         const li = document.createElement('li');
         fizzbuzzResult.appendChild(li);
-        li.textContent = val;
+        li.innerHTML = val;
       }} else {
         fizzbuzzResult.innerHTML = '';
         fizzbuzzResult.innerHTML = '<p>整数値を入力してください<p>'
