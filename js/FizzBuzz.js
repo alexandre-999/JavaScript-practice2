@@ -1,13 +1,18 @@
 'user strict';
-
-
 const output = document.getElementById('output');
 
 output.addEventListener('click', () => {
   const fizznum = Number(document.getElementById('id_FizzNum').value);
   const buzznum = Number(document.getElementById('id_BuzzNum').value);
   const fizzbuzzResult = document.getElementById('fizzbuzz-result');
+  
   fizzbuzzResult.innerHTML = '';
+  
+  const createLi = (val) =>{
+    const li = document.createElement('li');
+    fizzbuzzResult.appendChild(li);
+    li.innerHTML = val;
+  };
 
   if(
     Number.isInteger(fizznum) &&
@@ -17,18 +22,15 @@ output.addEventListener('click', () => {
     ) {
       for(i = 1; i < 100; i++) {
         if(i % fizznum === 0 && i % buzznum === 0) {
-          val = `FizzBuzz ${i}`;
+          // val = `FizzBuzz ${i}`;
+          createLi(`FizzBuzz ${i}`);
         } else if(i % fizznum === 0) {
-          val = `Fizz ${i}`;
+          // val = `Fizz ${i}`;
+          createLi(`Fizz ${i}`);
         } else if(i % buzznum === 0) {
-          val = `Buzz ${i}`;
-        } else {
-          val = '';
-        }
-        const li = document.createElement('li');
-        fizzbuzzResult.appendChild(li);
-        li.innerHTML = val;
-      }} else {
+          // val = `Buzz ${i}`;
+          createLi(`Buzz ${i}`);
+        }}} else {
         fizzbuzzResult.innerHTML = '';
         fizzbuzzResult.innerHTML = '<p>整数値を入力してください<p>'
 }});
