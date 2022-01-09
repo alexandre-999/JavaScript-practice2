@@ -22,13 +22,10 @@ output.addEventListener('click', () => {
     ) {
       for(i = 1; i < 100; i++) {
         if(i % fizznum === 0 && i % buzznum === 0) {
-          // val = `FizzBuzz ${i}`;
           createLi(`FizzBuzz ${i}`);
         } else if(i % fizznum === 0) {
-          // val = `Fizz ${i}`;
           createLi(`Fizz ${i}`);
         } else if(i % buzznum === 0) {
-          // val = `Buzz ${i}`;
           createLi(`Buzz ${i}`);
         }}} else {
         fizzbuzzResult.innerHTML = '';
