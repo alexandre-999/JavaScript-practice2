@@ -1,18 +1,17 @@
 'user strict';
 const output = document.getElementById('output');
 
+const fizzbuzzResult = document.getElementById('fizzbuzz-result');
+const createLi = (val) =>{
+  const li = document.createElement('li');
+  fizzbuzzResult.appendChild(li);
+  li.innerHTML = val;
+};
+
 output.addEventListener('click', () => {
   const fizznum = Number(document.getElementById('id_FizzNum').value);
   const buzznum = Number(document.getElementById('id_BuzzNum').value);
-  const fizzbuzzResult = document.getElementById('fizzbuzz-result');
-  
   fizzbuzzResult.innerHTML = '';
-  
-  const createLi = (val) =>{
-    const li = document.createElement('li');
-    fizzbuzzResult.appendChild(li);
-    li.innerHTML = val;
-  };
 
   if(
     Number.isInteger(fizznum) &&
